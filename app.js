@@ -7,6 +7,9 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 // Access the device camera and stream to cameraView
 function cameraStart() {
+    cameraView.setAttribute('autoplay', '');
+    cameraView.setAttribute('muted', '');
+    cameraView.setAttribute('playsinline', '');
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
